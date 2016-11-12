@@ -72,7 +72,7 @@ FString FBullCowGame::PrintGameSummary()
 	FString end_game_message = "";
 	if (bGameIsWon) 
 	{
-		 end_game_message = "**********\n	Congratulations - You Won!! \n**********\n";
+		 end_game_message = "**********\n	\n __   __ _______ __   __ \n|  | |  |       |  | |  |\n|  |_|  |   _   |  | |  |\n|       |  | |  |  |_|  |\n|_     _|  |_|  |       |\n  |   | |       |       |\n _|___|_|_______|_______|\n| | _ | |   |  |  | |  | \n| || || |   |   |_| |  | \n|       |   |       |  | \n|       |   |  _    |__| \n|   _   |   | | |   |__  \n|__| |__|___|_|  |__|__| \n \n**********\n";
 	}
 	else 
 	{
@@ -113,7 +113,7 @@ EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 	}
 	else if (!IsLowerCase(Guess)) // If guess isn't lowercase
 	{
-		return EGuessStatus::Not_Lowercase; //TODO write function
+		return EGuessStatus::Not_Lowercase;
 	}
 	else if (GetHiddenWordLength() != Guess.length()) // If guess length is off
 	{
