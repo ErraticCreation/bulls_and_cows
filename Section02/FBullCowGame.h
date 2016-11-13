@@ -30,6 +30,7 @@ public:
 	int32 GetCurrentTry() const;
 	bool IsGameWon() const;
 	EGuessStatus CheckGuessValidity(FString) const;
+	FString GetHiddenWord() const;
 	
 	void Reset();
 	FBullCowCount SubmitValidGuess(FString);
@@ -40,7 +41,6 @@ public:
 private:
 	// See constructor for initialization
 	int32 MyCurrentTry;
-	int32 MyMaxTries;
 	FString MyHiddenWord;
 	bool bGameIsWon;
 

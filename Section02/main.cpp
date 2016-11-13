@@ -47,6 +47,7 @@ int main()
 
 	do 
 	{
+		BCGame.Reset();
 		PrintIntro();
 		PlayGame();
 		bPlayAgain = AskToPlayAgain();
@@ -73,7 +74,6 @@ void PrintIntro()
 
 void PlayGame() 
 {
-	BCGame.Reset();
 	int32 MaxTries = BCGame.GetMaxTries();
 	std::cout << std::endl; 
 
@@ -130,7 +130,7 @@ FText GetValidGuess()
 
 bool AskToPlayAgain() 
 {
-	std::cout << "Would you like to play again with the same word? (y/n): ";
+	std::cout << "Would you like to play again with a different word? (y/n): ";
 	FText Response = "";
 	std::getline(std::cin, Response);
 	std::cout << std::endl;
