@@ -133,6 +133,9 @@ FString FBullCowGame::GetHiddenWord() const
 {
 	// Create an array containing possible isograms for guessing (single words with no repeating characters)
 	TArray<FString> List{ "air","arm","gas","mag","rag","orc","rob","sob","age","ark", "damp", "sour", "bags", "ears", "foam", "firm", "grim", "grin", "marsh", "girls", "marks", "males", "fails", "grams", "major", "savior", "ransom", "morals", "disarm", "radios", "armies", "isogram", "mirages", "margins", "roaming" };
+	// Seed random number 
+	srand(static_cast<unsigned int>(time(NULL)));
+	
 	// return a random word from the list
 	return List[(rand() % List.size())];
 }
