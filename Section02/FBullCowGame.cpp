@@ -1,10 +1,11 @@
+#pragma once
 #include "FBullCowGame.h"
 #include <map>
 #include <vector>
 #include <ctime>
+// To make syntax Unreal friendly
 #define TMap std::map
 #define TArray std::vector
-
 using int32 = int;
 
 FBullCowGame::FBullCowGame(){ Reset(); } // default constructor
@@ -130,7 +131,7 @@ EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 
 FString FBullCowGame::GetHiddenWord() const
 {
-	// Create an array containing possible isograms for guessing
+	// Create an array containing possible isograms for guessing (single words with no repeating characters)
 	TArray<FString> List{ "air","arm","gas","mag","rag","orc","rob","sob","age","ark", "damp", "sour", "bags", "ears", "foam", "firm", "grim", "grin", "marsh", "girls", "marks", "males", "fails", "grams", "major", "savior", "ransom", "morals", "disarm", "radios", "armies", "isogram", "mirages", "margins", "roaming" };
 	// return a random word from the list
 	return List[(rand() % List.size())];

@@ -6,33 +6,34 @@
 // Copyright   : Tarah Nixon © 2016. All Rights Reserved
 // Description : BullCowGame in C++
 //============================================================================
-
 //   ____  _     _    _    ____    
 //  /  __\/ \ /\/ \  / \  / ___\   
-//  | | //| | ||| |  | |  |    \   
+//  | | //| | ||| |  | |  |    \  
 //  | |_\\| \_/|| |_/\ |_/\___ |   
 //  \____/\____/\____|____|____/__ 
 //  /.\    /   _\/  _ \/ \  // ___\
 //  \ _\_  |  /  | / \|| |  ||    \
 //  /|/ /  |  \__| \_/|| |/\|\___ |
 //  \__/\  \____/\____/\_/  \\____/
-//                                 
+//****************************************************************************
 
 /* This is the console executable, that makes use of the BullCow class
 This acts as the view in a MVC Pattern, and is responsible for all user interaction.
 For game logic see the FBullCowGame class
 */
 
+#pragma once
 #include <iostream>
 #include <string>
 #include "FBullCowGame.h"
 
+// To make syntax Unreal friendly
 using FText = std::string;
 using int32 = int;
 
-FBullCowGame BCGame; // Instantiate the game
+FBullCowGame BCGame; // Instantiate the game, which we re-use across plays
 
-/* Prototypes
+/* Function Prototypes
 ___________________________________________________________________
 */
 void PrintIntro();
@@ -72,6 +73,7 @@ void PrintIntro()
 	return;
 }
 
+// Plays a single game to completion
 void PlayGame() 
 {
 	int32 MaxTries = BCGame.GetMaxTries();

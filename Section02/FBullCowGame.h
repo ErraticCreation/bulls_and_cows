@@ -1,6 +1,9 @@
+/* The Game Logic (No View Code or direct user interaction)*/
+
 #pragma once
 #include <string>
 
+// To make syntax Unreal friendly
 using FString = std::string;
 using int32 = int;
 
